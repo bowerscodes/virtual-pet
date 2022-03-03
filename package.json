@@ -1,0 +1,22 @@
+{
+  "name": "virtual-pet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --verbose --bail"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bowerscodes/virtual-pet.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bowerscodes/virtual-pet/issues"
+  },
+  "homepage": "https://github.com/bowerscodes/virtual-pet#readme",
+  "devDependencies": {
+    "jest": "^27.5.1"
+  }
+}
