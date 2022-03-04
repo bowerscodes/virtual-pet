@@ -1,9 +1,13 @@
-
+// food
 const APETITE = 5
 const FEED = 3
 
+// exercise
 const MAXIMUM_FITNESS = 10;
+const AGE_FITNESS = 3
 const WALK_EXERCISE = 4
+
+
 
 function Pet(name) {
     this.name = name;
@@ -15,7 +19,7 @@ function Pet(name) {
 Pet.prototype.growUp = function() {
     this.age += 1;
     this.hunger += APETITE;
-    this.fitness -= 3;
+    this.fitness -= AGE_FITNESS;
 };
 
 Pet.prototype.walk = function() {
