@@ -1,5 +1,6 @@
 
 const APETITE = 5
+const FEED = 3
 
 const MAXIMUM_FITNESS = 10;
 const WALK_EXERCISE = 4
@@ -25,5 +26,11 @@ Pet.prototype.walk = function() {
     }
     
 }
-
+Pet.prototype.feed = function() {
+     if (this.hunger >= FEED) {
+         this.hunger -= FEED;
+} else {
+    this.hunger = 0;
+}
+};
 module.exports = Pet;
