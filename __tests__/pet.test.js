@@ -79,5 +79,29 @@ describe('feed', () => {
 
         expect(pet.hunger).toEqual(0);
     });
-    
+  
+})
+describe('checkup', () => {
+    it("returns 'I'm hungry AND I need a walk!' when fitness below 3 and hunger above 5", () => {
+        const pet = new Pet('Fido');
+        pet.fitness = 2;
+        pet.hunger = 6
+        expect(pet.checkup()).toBe("I'm hungry AND I need a walk!")
+    })
+    it("returns 'I need a walk' if the pet's fitness is 3 or less", () => {
+        const pet = new Pet('Fido');
+        pet.fitness = 2;
+        expect(pet.checkup()).toBe("I need a walk")
+    })
+    it("returns 'I'm hungry' if the pet's hunger is 5 or more", () => {
+        const pet = new Pet('Fido');
+        pet.hunger = 5;
+        expect(pet.checkup()).toBe("I'm hungry")
+    })
+    it("returns 'I feel great!' if the pet's hunger is under 5 and fitness over 3", () => {
+        const pet = new Pet('Fido');
+        pet.hunger = 4;
+        pet.fitness = 4
+        expect(pet.checkup()).toBe("I feel great!")
+    })
 })
