@@ -3,6 +3,7 @@ const APETITE = 5
 const FEED = 3
 
 const NEED_FOOD = 5
+const MAX_HUNGER = 10
 
 
 // exercise
@@ -11,6 +12,10 @@ const AGE_FITNESS = 3
 const WALK_EXERCISE = 4
 
 const NEED_WALK = 3
+const MINIMUM_FITNESS = 0
+
+
+const MAX_AGE = 30
 
 
 
@@ -19,26 +24,11 @@ function Pet(name) {
     this.age = 0;
     this.hunger = 0;
     this.fitness = 10;
-    // if ((this.fitness <= 3) && (this.hunger >= 5)) {
-    //     this.checkup = "I'm hungry AND I need a walk!"
-    // } if (this.fitness <= 3) {
-    //     this.checkup = "I need a walk"
-    // } if (this.hunger >= 5) {
-    //     this.checkup = "I'm hungry"
-    // } else {
-    //     this.checkup = "I feel great!";
-    // }
 }
 
-Pet.prototype.checkup = function () {
-    if ((this.fitness <= NEED_WALK) && (this.hunger >= NEED_FOOD)) {
-        return "I'm hungry AND I need a walk!";
-    } else if (this.fitness <= NEED_WALK) {
-        return "I need a walk";
-    } else if (this.hunger >= NEED_FOOD) {
-        return "I'm hungry";
-    } else {
-        return "I feel great!";
+Pet.prototype = {
+    get isAlive() {
+        return this.age < MAX_AGE && this.hunger < MAX_HUNGER && this.fitness > MINIMUM_FITNESS
     }
 }
 
@@ -63,4 +53,18 @@ Pet.prototype.feed = function() {
     this.hunger = 0;
 }
 };
+
+Pet.prototype.checkup = function () {
+    if ((this.fitness <= NEED_WALK) && (this.hunger >= NEED_FOOD)) {
+        return "I'm hungry AND I need a walk!";
+    } else if (this.fitness <= NEED_WALK) {
+        return "I need a walk";
+    } else if (this.hunger >= NEED_FOOD) {
+        return "I'm hungry";
+    } else {
+        return "I feel great!";
+    }
+}
+
+
 module.exports = Pet;
