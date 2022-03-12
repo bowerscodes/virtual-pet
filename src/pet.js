@@ -79,8 +79,9 @@ Pet.prototype.checkup = function () {
     }
 }
 
-Pet.prototype.adoptChild = function () {
-    parent.children.append(child)
+Pet.prototype.adoptChild = function (childName) {
+    const child = new Pet(childName);
+    this.children.push(child);
 }
 
 
