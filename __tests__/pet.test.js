@@ -155,3 +155,12 @@ describe('isAlive', () => {
 
     });
 })
+describe("adoptChild", () => {
+    it("Adopts a child into the parent's 'children' array", () => {
+        const parent = new Pet('Dave');
+        const child = new Pet('Amelia')
+        
+        pet.adoptChild(child);
+        expect(parent.children).toBe("[ Pet { name: 'Amelia', children: [] } ]")
+    });
+})
